@@ -1,9 +1,11 @@
 import React from 'react';
 import logo from '../logo.svg';
+import {BrowserRouter} from 'react-router-dom'
 import '../App.css';
 import {
-  BasicComponent, 
-  Header
+  Body,
+  Header,
+  IotRouter,
 } from '../components'
 
 
@@ -11,8 +13,11 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Header />
-        <BasicComponent/>
+        <BrowserRouter>
+          <Header />
+          <IotRouter/>
+          <Body/>
+        </BrowserRouter>
       </header>
     </div>
   );

@@ -1,54 +1,43 @@
-.grid-3 {
-    display: grid;
-    grid-template-columns: auto auto auto; 
-    grid-gap: 10px;
-    background-color:white;
-    width: 100vw;
-}
-.grid-3 > div {
-    /* background-color: rgba(255, 255, 255, 0.8); */
-    text-align: center;
-    padding: 20px;
-    font-size: 30px;
-}
-.header {
-    top:0;
-    height: 15vh;
-    position: absolute;
-    color: black;
-}
-/* .header-left {
-    position: absolute;
-    left: 0;
-    width: 100px;
-} */
-.header-right {
-    /* position: fixed; */
-    right: 30px;
-}
-.header-left {
-    /* position: fixed; */
-    left: 10px;
-}
-.header-center {
-    font-weight:bold;
-}
-.bold {
-    font-weight: bold;
-}
-.blue{
+
+.l-blue{
     color: rgb(105, 219, 240);
 }
-.bottom {
-    position: fixed;
-    top: 15vh;
-    width: 100vw;
-    border-bottom: solid 1px rgb(105, 219, 240);
-    border-top: solid 1px rgb(105, 219, 240);
+.d-blue {
+    color: rgb(17, 34, 37);
+
 }
+
+.devetry-logo {
+    transform: scale(0.5);
+    position: fixed;
+    left: -90px;
+    top: -36px;
+}
+
+.header {
+    top:0;
+    height: 100px; 
+    position: absolute;
+    color: black;
+    background-color: white;
+    width: 110vw
+}
+
+
 .left-align {
     text-align: left;
 }
 .time {
-    
+    position: fixed;
+    right: 10px;
+    font-weight: bold;
+
+}
+.title {
+    padding-left: 10px;
+    position: fixed;
+    top: -10px;
+    left: 200px;
+    font-weight: bold;
+
 }

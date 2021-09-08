@@ -1,6 +1,7 @@
 import React from 'react';
 import './index.css';
 import logo from '../../images/devetry_logo.png'
+import {Nav} from '../index'
 
 
 interface Props {
@@ -10,21 +11,12 @@ interface Props {
 export const Header: React.FC<Props> = () => {
     return (
 
-            <div className='header grid-3'>
-                <div className='header-left'>
-                    {/* <h1>Devetry Part of Dept</h1> */}
-                    <img src={logo} alt="logo" />
-                </div>
-                <div className='header-center'>
-                    
-                </div>
-                <div className='header-right'>
-                    <p className='time'>10:13:21 AM</p>
-                </div>
-                <div className='bottom'>
-                    <p className='bold blue left-align'>IoT Embedded - Office Meters</p>
-                </div>
-            </div>
+        <div className='header'>
+            <img src={logo} alt="logo" className='devetry-logo'/>
+            <p className='time'>10:13:21 AM</p>
+            <p className='d-blue title'>IoT Embedded - Office Meters</p>
+            <Nav num={['Home', 'CO2', 'Temp', 'Humidity']}/>
+        </div>
 
     );
 }
