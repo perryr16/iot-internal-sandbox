@@ -1,8 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import App from './app/App'
 import reportWebVitals from './reportWebVitals';
+import './fonts/ostrich-regular.ttf'
+import './fonts/FuturaNowHeadline-Bd.otf'
+import './fonts/Roboto-Thin.ttf'
 
 ReactDOM.render(
   <React.StrictMode>

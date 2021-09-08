@@ -1,3 +1,30 @@
+
+@font-face {
+  font-family: "OstrichRegular";
+  src: local("OstrichRegular"),
+  url("./fonts/ostrich-regular.ttf") format("truetype");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "FuturaBold";
+  src: local("FuturaBold"),
+  url("./fonts/FuturaNowHeadline-Bd.otf") format("truetype");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "FuturaScript";
+  src: local("FuturaScript"),
+  url("./fonts/FuturaNowScript-Rg.otf") format("truetype");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "RobotoThin";
+  src: local("RobotoThin"),
+  url("./fonts/Roboto-Thin.ttf") format("truetype");
+  font-weight: normal;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,6 +32,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: "RobotoThin";
+  /* font-family: "FuturaBold"; */
+  /* font-family: "OstrichRegular"; */
 }
 
 code {
