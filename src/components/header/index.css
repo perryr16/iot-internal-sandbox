@@ -3,8 +3,7 @@
     color: rgb(105, 219, 240);
 }
 .d-blue {
-    color: rgb(17, 34, 37);
-
+    color: rgb(3, 67, 110);
 }
 
 .devetry-logo {
@@ -34,10 +33,11 @@
 
 }
 .title {
-    padding-left: 10px;
+    padding-left: 100px;
     position: fixed;
-    top: -10px;
-    left: 200px;
-    font-weight: bold;
+    top: -14px;
+    left: 35vw;
+    font-weight: bolder;
+    font-size:larger;
 
 }

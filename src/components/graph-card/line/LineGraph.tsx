@@ -1,30 +1,51 @@
 import React from 'react';
 import {Line} from 'react-chartjs-2'
+import { lineData } from '../../../fixtures/lineData'
+import './index.css'
 
 interface Props {
 
 }
 
+const dataX = lineData.map(point => point.time)
+const dataY = lineData.map(point => point.value)
+
 const state = {
-    labels: ['January', 'February', 'March',
-             'April', 'May'],
+    labels: dataX,
     datasets: [
       {
         label: 'Rainfall',
         fill: false,
         lineTension: 0.5,
         backgroundColor: 'rgba(75,192,192,1)',
-        borderColor: 'rgba(0,0,0,1)',
+        borderColor: 'rgb(23, 182, 255)',
         borderWidth: 2,
-        data: [65, 59, 80, 81, 56]
+        data: dataY,
+        pointRadius:0,
       }
-    ]
+    ],
   }
+// const state = {
+//     labels: ['January', 'February', 'March',
+//              'April', 'May'],
+//     datasets: [
+//       {
+//         label: 'Rainfall',
+//         fill: false,
+//         lineTension: 0.5,
+//         backgroundColor: 'rgba(75,192,192,1)',
+//         borderColor: 'rgba(0,0,0,1)',
+//         borderWidth: 2,
+//         data: [65, 59, 80, 81, 56]
+//       }
+//     ]
+//   }
 
 export const LineGraph: React.FC<Props> = () => {
     return (
         <div>
             <Line
+                className='line-graph'
                 data={state}
                 options={{
                 title:{
