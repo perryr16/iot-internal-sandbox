@@ -1,6 +1,8 @@
 import { BarGraph } from './graph-card/bar/BarGraph'
 import { BasicComponent } from './basic_component/BasicComponent'
 import { Body } from './body/Body'
+import { Gauge } from './graph-card/performance/Gauge'
+import { GaugeCustom } from './graph-card/performance/GaugeCustom'
 import { GraphCard } from './graph-card/GraphCard'
 import { Header } from './header/Header'
 import { LineGraph } from './graph-card/line/LineGraph'
@@ -12,6 +14,8 @@ export{
     BarGraph,
     BasicComponent,
     Body,
+    Gauge,
+    GaugeCustom,
     GraphCard,
     Header,
     LineGraph,
