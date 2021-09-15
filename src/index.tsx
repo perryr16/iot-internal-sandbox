@@ -6,10 +6,20 @@ import reportWebVitals from './reportWebVitals';
 import './fonts/ostrich-regular.ttf'
 import './fonts/FuturaNowHeadline-Bd.otf'
 import './fonts/Roboto-Thin.ttf'
+import {Provider} from 'react-redux'
+import {store} from './app/store'
+import {persistStore} from 'redux-persist'
+import {PersistGate} from 'redux-persist/integration/react'
+
+const persistor = persistStore(store)
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
+        <App />
+      </PersistGate>
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

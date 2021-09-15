@@ -1,11 +1,14 @@
 
 .side-nav {
-    position: absolute;
-    left: 100px;
-    top: 100px;
+    position: fixed;
+    left: 0px;
+    top: 110px;
     width: 350px;
     height: 100vh;
     background-color: rgb(29, 29, 29);
+    /* z-index: -1; */
+    padding-top: 40px;
+    /* box-shadow: 2px 0px 10px 0px #02aff3; */
 }
 .nav-link {
     text-decoration: none;
@@ -18,11 +21,17 @@
     text-align: left;
     border-radius: 2px;
     border: solid 1px rgb(29, 29, 29);
-    padding: 20px;
+    margin-left: 20px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding-left: 10px;
     width: 200px;
     left: 100px;
     margin-left: 70px;
     margin-top: 5px;
+}
+.side-nav:first-child {
+    padding-top:40px;
 }
 .link-container:hover {
     border-left: solid 1px rgb(23, 182, 255);

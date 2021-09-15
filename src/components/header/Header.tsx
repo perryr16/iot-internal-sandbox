@@ -16,7 +16,7 @@ export const Header: React.FC<Props> = () => {
             <img src={logo} alt="logo" className='devetry-logo'/>
             <p className='time'>10:13:21 AM</p>
             <p className='d-blue title'>IoT Embedded - Office Meters</p>
-            <Nav num={['Home', 'CO2', 'Temp', 'Humidity']}/>
+            <Nav pageName={['Home', 'CO2', 'Temp', 'Humidity']}/>
         </div>
 
     );

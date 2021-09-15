@@ -9,8 +9,8 @@
 .devetry-logo {
     transform: scale(0.5);
     position: fixed;
-    left: -90px;
-    top: -36px;
+    left: -40px;
+    top: -20px;
 }
 
 .header {
@@ -19,8 +19,13 @@
     position: absolute;
     color: black;
     background-color: white;
-    width: 110vw
+    width: 110vw;
+    border-bottom: 3px solid rgb(23, 182, 255);
+    /* box-shadow: 0px 0px 10px 8px #02aff3; */
+    /* outline: 1px solid rgb(111, 209, 255); */
+    z-index: 5;
 }
+
 
 
 .left-align {
