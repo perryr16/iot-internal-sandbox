@@ -1,0 +1,10 @@
+.graph-card{
+    overflow: scroll;
+    position: fixed;
+    top: 100px;
+    left: 350px;
+    height: calc(100vh - 100px);
+    width: calc(100vw - 350px);
+    padding-top: 100px;
+
+}

@@ -1,5 +1,6 @@
 import React from 'react';
 import {Pie, Doughnut} from 'react-chartjs-2'
+import './index.css'
 
 interface Props {
 
@@ -32,23 +33,25 @@ const state = {
 
 export const PieChart: React.FC<Props> = () => {
     return (
-        <div>
-        <Pie
-          data={state}
-          options={{
-            title:{
-              display:true,
-              text:'Average Rainfall per month',
-              fontSize:20
-            },
-            legend:{
-              display:true,
-              position:'right'
-            }
-          }}
-        />
+        <div className='pie-container'>
+          <Pie
+            className='pie-chart'
+            data={state}
+            options={{
+              title:{
+                display:true,
+                text:'Average Rainfall per month',
+                fontSize:20
+              },
+              legend:{
+                display:true,
+                position:'right'
+              }
+            }}
+          />
 
         <Doughnut
+          className='pie-chart'
           data={state}
           options={{
             title:{

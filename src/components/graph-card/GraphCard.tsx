@@ -1,14 +1,14 @@
 import React from 'react';
+import './index.css'
 
-interface Props {
-    text: string
-}
+// interface Props {
+//     component: any
+// }
 
-export const GraphCard: React.FC<Props> = (props) => {
-    const {text} = props
+export const GraphCard: React.FC= (props) => {
     return (
-        <div>
-            <p>{text}</p>
+        <div className='graph-card'>
+            {props.children}
         </div>
     );
 }

@@ -16,7 +16,6 @@ function App() {
         <BrowserRouter>
           <Header />
           <IotRouter/>
-          <Body/>
         </BrowserRouter>
       </header>
     </div>

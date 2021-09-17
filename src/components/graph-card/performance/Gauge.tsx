@@ -1,6 +1,7 @@
 import React from 'react';
 import GaugeChart from 'react-gauge-chart'
 import ReactSpeedometer from 'react-d3-speedometer';
+import './index.css'
 
 interface Props {
 
@@ -31,7 +32,7 @@ const colorArr = [
 export const Gauge: React.FC<Props> = () => {
     const textColor = '#AAA'
     return (
-        <div>
+        <div className='gauge-container'>
             <ReactSpeedometer
             maxValue={500}
             value={473}
@@ -43,22 +44,30 @@ export const Gauge: React.FC<Props> = () => {
             />
 
             <GaugeChart id="gauge-chart2" 
+            className='gauge-chart'
             nrOfLevels={20} 
             percent={0.55} 
             colors={['rgb(0, 60, 255)', 'rgb(255, 251, 0)']}
+            style={{width:'400px'}}
             />
             <GaugeChart id="gauge-chart2" 
+            className='gauge-chart'
             nrOfLevels={21} 
             percent={0.86} 
             colors={colorArr}
+            style={{width:'400px'}}
             />
 
             <GaugeChart id="gauge-chart5"
+            className='gauge-chart'
             nrOfLevels={420}
             arcsLength={[0.1, 0.2, 0.4, 0.2, 0.1]}
             colors={['rgb(255, 0, 0)', 'rgb(255, 251, 0)','rgb(43, 255, 0)','rgb(255, 251, 0)', 'rgb(255, 0, 0)']}
             percent={0.37}
             arcPadding={0.02}
+            style={{width:'400px'}}
+
+
             />
         </div>
     );

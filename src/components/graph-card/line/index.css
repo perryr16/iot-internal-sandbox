@@ -1,9 +1,4 @@
 .line-graph {
     width: 70vw;
-    padding-left: 200px;
-    padding-top: 100px;
-    /* position: absolute; */
-}
-.test {
-    color: rgb(57, 172, 109)
+    margin: auto;
 }

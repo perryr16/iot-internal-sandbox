@@ -24,7 +24,7 @@ export const Nav: React.FC<Props> = (props) => {
         <div className='side-nav'>
             {pageName.map((item) => {
                 return (
-                    <Link className='nav-link' to={`/${item}`}  >
+                    <Link className='nav-link' to={`/${item}`} key={item} >
                         {page.page == item 
                         ? <div  className='link-container' onClick={() => handlePage(item)} style={{borderLeft: 'solid 1px rgb(255,255,255)', color: 'rgb(255,255,255)'}}>
                                 {item}
