@@ -13,6 +13,7 @@ export const LineNivoCanvas = ({ data }) => {
             margin={{ top: 50, right: 160, bottom: 50, left: 60 }}
             xScale={{ type: 'linear'}}
             yScale={{ type: 'linear', stacked: true, min: 'auto', max: 'auto'}}
+            pointBorderColor={'green'}
             yFormat=" >-.2f"
             curve="monotoneX"
             axisTop={null}
@@ -48,7 +49,9 @@ export const LineNivoCanvas = ({ data }) => {
 
             }}
             enableGridX={true}
-            colors={{ scheme: 'spectral' }}
+
+            // colors={{ scheme: 'spectral' }}
+            colors={{ scheme: 'pastel2' }}
             lineWidth={1}
             pointSize={0}
             pointColor={{ theme: 'background' }}

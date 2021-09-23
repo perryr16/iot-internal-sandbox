@@ -9,7 +9,7 @@ import { IgrRadialGaugeModule } from 'igniteui-react-gauges';
 
 
 export const GaugeHalf = (props:any) => {
-    const {range1Color, range2Color, title, value, minValue, maxValue, intervals, range1, range2} = props; 
+    const {range1Color, range2Color, title, value, units, minValue, maxValue, intervals, range1, range2} = props; 
 
     const rangeColorString = range1Color + ', ' + range2Color
 
@@ -88,7 +88,7 @@ export const GaugeHalf = (props:any) => {
                 {title}
             </div>
             <div className='value'>
-                {value} s
+                {value} {units}
             </div>
 
         </div>
