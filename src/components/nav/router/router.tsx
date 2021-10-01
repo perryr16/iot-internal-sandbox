@@ -10,6 +10,7 @@ import {
    GaugeIC,
    Gauge34,
    GaugeHalf,
+   MultilineContainer,
    LineNivo,
    LineNivoCanvas,
    PerformanceContainer
@@ -38,12 +39,7 @@ export const IotRouter: React.FC = () => {
          </Route>
          <Route exact path="/Gauge">
             <GraphCard>
-               <PerformanceContainer>
-
-               </PerformanceContainer>
-               {/* <Gauge34 />
-               <GaugeHalf /> */}
-               {/* <GaugeIC /> */}
+               <PerformanceContainer/>
                <Gauge />
                <GaugeCustom />
             </GraphCard>
@@ -52,6 +48,14 @@ export const IotRouter: React.FC = () => {
             <GraphCard>
                {/* <LineNivo data={lineNivoData} /> */}
                <LineNivoCanvas data={lineNivoData} />
+            </GraphCard>
+         </Route>
+         <Route exact path="/d3Line">
+            <GraphCard>
+               {/* <LineNivoCanvas data={lineNivoData} /> */}
+               <p style={{backgroundColor: 'red', width: '1000px', margin: 'auto'}}>D3 Line</p>
+               <MultilineContainer/>
+
             </GraphCard>
          </Route>
          <Route path="/">
