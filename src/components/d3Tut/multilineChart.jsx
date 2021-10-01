@@ -1,23 +1,39 @@
-/** MultilineChart.js */
 // @ts-nocheck
-import React, {useRef, useEffect, useState, useMemo} from "react";
-import * as d3 from "d3";
-import { 
-  drawAxis,
-  getXScale,
-  getYScale,
-  drawLine,
-  animateLine,
-} from './utils'
-import { Area, Axis, GridLine, Line } from '../index'
+import React, {useRef} from "react";
+import * as d3 from 'd3'
+import { Area, Axis, GridLine, Line, Overlay, Tooltip } from '../index'
 import useController from './multilineChart.controller.js'
 
 export const MultilineChart = ({ data = [], dimensions = {} }) => {
+  const overlayRef = useRef(null);
+  // const [containerRef, {svgWidth, svgHeight, width, height}] = useDimensions ({
+  //   maxHeight: 400,
+  //   margin
+  // })
   const { width, height, margin = {} } = dimensions;
   const svgWidth = width + margin.left + margin.right;
   const svgHeight = height + margin.top + margin.bottom;
   const controller = useController({ data, width, height });
   const { yTickFormat, xScale, yScale, yScaleForAxis } = controller
+
+
+  const tooltip = d3.select('.tooltip-area').style('opacity',0)
+
+  const mouseover = (e, d) => {
+    tooltip.style('opacity', 1)
+  }
+
+  const mouseleave = (e, d) => {
+
+  }
+
+  const mousemove = (e, d) => {
+    const text = d3.select('.tooltip-area__text');
+    text.text(`${d.date}, ${d.value}`)
+    const [x,y] = d3.pointer(e)
+
+    tooltip.attr('transform', `translate(${x}, ${y})`)
+  }
 
   return (
     <svg width={svgWidth} height={svgHeight}>
@@ -45,7 +61,7 @@ export const MultilineChart = ({ data = [], dimensions = {} }) => {
             xScale={xScale}
             yScale={yScale}
             color={color}
-            animation="left"
+            animation="fadeIn"
           />
         ))}
         <Area 
@@ -61,13 +77,25 @@ export const MultilineChart = ({ data = [], dimensions = {} }) => {
           ticks={5}
           tickFormat={yTickFormat}
         />
-        <Axis
-          type="bottom"
-          className="axisX"
-          scale={xScale}
-          transform={`translate(10, ${height - height / 6})`}
-          ticks={5}
-        />
+        <Overlay ref={overlayRef} width={width} height={height}>
+          <Axis
+            type="bottom"
+            className="axisX"
+            scale={xScale}
+            transform={`translate(10, ${height - height / 6})`}
+            ticks={5}
+          />
+          <Tooltip
+            className='tooltip'
+            anchorEl={overlayRef.current}
+            width={width}
+            height={height}
+            margin={margin}
+            xScale={xScale}
+            yScale={yScale}
+            data={data}
+          />
+        </Overlay>
       </g>
     </svg>
   );

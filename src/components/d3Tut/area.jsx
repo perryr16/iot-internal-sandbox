@@ -5,15 +5,15 @@ export const Area = ({
     xScale, yScale, color, data, disableAnimation, ...props
 }) => {
     const ref = React.useRef(null);
-  React.useEffect(() => {
-    if (disableAnimation) {
-      d3.select(ref.current).attr("opacity", 1);
-      return;
-    }
-    d3.select(ref.current).transition()
-      .duration(750)
-      .ease(d3.easeBackIn)
-      .attr("opacity", 1);
+    useEffect(() => {
+        if (disableAnimation) {
+            d3.select(ref.current).attr("opacity", 1);
+            return;
+        }
+        d3.select(ref.current).transition()
+            .duration(750)
+            .ease(d3.easeBackIn)
+            .attr("opacity", 1);
   }, [disableAnimation]);
  
   const d = React.useMemo(() => {

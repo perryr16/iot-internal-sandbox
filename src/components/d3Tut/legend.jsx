@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const Legend = ({data, selectedItems, unselectedItems, onChange}) => {
+export const Legend = ({data, selectedItems, onChange}) => {
     return(
         <div className='legendContianer'>
             {data.map((d) => (

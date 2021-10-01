@@ -1,3 +1,4 @@
+import React from 'react'
 import * as d3 from "d3";
  
 export const getXScale = (data, width) => {
@@ -65,7 +66,6 @@ export const animateLine = ({element}) => {
         .ease(d3.easeLinear)
         .attr('stroke-dashoffset', 0);
 }
-
 
 
 

@@ -4,59 +4,60 @@ import * as d3 from 'd3';
 export const Line = ({
     xScale, yScale, color, data, animation, ...props
 }) => {
-    const ref = React.useRef(null);
-  // Define different types of animation that we can use
-  const animateLeft = React.useCallback(() => {
-    const totalLength = ref.current.getTotalLength();
-    d3.select(ref.current)
-      .attr("opacity", 1)
-      .attr("stroke-dasharray", `${totalLength},${totalLength}`)
-      .attr("stroke-dashoffset", totalLength)
-      .transition()
-      .duration(750)
-      .ease(d3.easeLinear)
-      .attr("stroke-dashoffset", 0);
-  }, []);
-  const animateFadeIn = React.useCallback(() => {
-    d3.select(ref.current)
-      .transition()
-      .duration(750)
-      .ease(d3.easeLinear)
-      .attr("opacity", 1);
-  }, []);
-  const noneAnimation = React.useCallback(() => {
-    d3.select(ref.current).attr("opacity", 1);
-  }, []);
+    const ref = useRef(null);
+    // Define different types of animation that we can use
+    const animateLeft = useCallback(() => {
+        const totalLength = ref.current.getTotalLength();
+        d3.select(ref.current)
+        .attr("opacity", 1)
+        .attr("stroke-dasharray", `${totalLength},${totalLength}`)
+        .attr("stroke-dashoffset", totalLength)
+        .transition()
+        .duration(1200)
+        .ease(d3.easeLinear)
+        .attr("stroke-dashoffset", 0);
+    }, []);
+    const animateFadeIn = useCallback(() => {
+        d3.select(ref.current)
+        .transition()
+        .duration(1200)
+        .ease(d3.easeLinear)
+        .attr("opacity", 1);
+    }, []);
+    const noneAnimation = useCallback(() => {
+        d3.select(ref.current).attr("opacity", 1);
+    }, []);
  
-  React.useEffect(() => {
-    switch (animation) {
-      case "left":
-        animateLeft();
-        break;
-      case "fadeIn":
-        animateFadeIn();
-        break;
-      case "none":
-      default:
-        noneAnimation();
-        break;
-    }
-  }, [animateLeft, animateFadeIn, noneAnimation, animation]);
+    useEffect(() => {
+        switch (animation) {
+        case "left":
+            animateLeft();
+            break;
+        case "fadeIn":
+            animateFadeIn();
+            break;
+        case "none":
+        default:
+            noneAnimation();
+            break;
+        }
+    }, [animateLeft, animateFadeIn, noneAnimation, animation]);
  
  // Recalculate line length if scale has changed
-  React.useEffect(() => {
-    if (animation === "left") {
-      const totalLength = ref.current.getTotalLength();
-      d3.select(ref.current).attr(
-        "stroke-dasharray",
-        `${totalLength},${totalLength}`
-      );
-    }
-  }, [xScale, yScale, animation]);
+    useEffect(() => {
+        if (animation === "left") {
+        const totalLength = ref.current.getTotalLength();
+        d3.select(ref.current).attr(
+            "stroke-dasharray",
+            `${totalLength},${totalLength}`
+        );
+        }
+    }, [xScale, yScale, animation]);
  
   const line = d3.line()
     .x((d) => xScale(d.date))
-    .y((d) => yScale(d.value));
+    .y((d) => yScale(d.value))
+    .curve(d3.curveCatmullRom.alpha(0.1))
  
   return (
     <path

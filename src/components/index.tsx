@@ -21,8 +21,10 @@ import { LineNivoCanvas } from './nivo/LineNivoCanvas.jsx'
 import { MultilineChart } from './d3Tut/multilineChart.jsx'
 import { MultilineContainer } from './d3Tut/multilineContainer'
 import { Nav } from './nav/Nav'
+import { Overlay } from './d3Tut/overlay.jsx'
 import { PerformanceContainer } from './graph-card/performance/PerformacneContainer.jsx'
 import { PieChart } from './graph-card/pie/PieChart'
+import { Tooltip } from './d3Tut/tooltip.jsx'
 
 export{
     Area,
@@ -47,7 +49,9 @@ export{
     MultilineChart,
     MultilineContainer,
     Nav,
+    Overlay,
     PerformanceContainer,
     PieChart,
+    Tooltip,
 
 }
