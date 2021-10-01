@@ -1,9 +1,6 @@
 import React , {useEffect, useState} from 'react';
 import { MultilineChart} from '..';
 import { Legend } from './legend'
-// import schc from '../../fixtures/SCHC.json'
-// import vcit from '../../fixtures/VCIT.json'
-import portfolio from '../../fixtures/portfolio.json'
 import { linedata2, addData } from '../../fixtures/d3ChartData';
 import { linedataNum, addDataNum } from '../../fixtures/d3ChartData2';
 

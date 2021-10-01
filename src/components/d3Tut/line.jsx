@@ -13,7 +13,7 @@ export const Line = ({
         .attr("stroke-dasharray", `${totalLength},${totalLength}`)
         .attr("stroke-dashoffset", totalLength)
         .transition()
-        .duration(750)
+        .duration(1200)
         .ease(d3.easeLinear)
         .attr("stroke-dashoffset", 0);
     }, []);
@@ -27,6 +27,15 @@ export const Line = ({
     const noneAnimation = useCallback(() => {
         d3.select(ref.current).attr("opacity", 1);
     }, []);
+    const animateNewData = useCallback(() => {
+        const totalLength = ref.current.getTotalLength();
+        d3.select('.line')
+        .transition()
+        .duration(2000)
+        .attr('d', line)
+
+
+    })
  
     useEffect(() => {
         switch (animation) {
@@ -41,7 +50,8 @@ export const Line = ({
             noneAnimation();
             break;
         }
-    }, [animateLeft, animateFadeIn, noneAnimation, animation]);
+        animateNewData()
+    }, [animateLeft, animateFadeIn, noneAnimation, animation, data]);
  
  // Recalculate line length if scale has changed
     useEffect(() => {
