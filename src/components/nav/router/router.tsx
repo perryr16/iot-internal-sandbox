@@ -53,7 +53,6 @@ export const IotRouter: React.FC = () => {
          <Route exact path="/d3Line">
             <GraphCard>
                {/* <LineNivoCanvas data={lineNivoData} /> */}
-               <p style={{backgroundColor: 'red', width: '1000px', margin: 'auto'}}>D3 Line</p>
                <MultilineContainer/>
 
             </GraphCard>

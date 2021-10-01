@@ -13,14 +13,14 @@ export const Line = ({
         .attr("stroke-dasharray", `${totalLength},${totalLength}`)
         .attr("stroke-dashoffset", totalLength)
         .transition()
-        .duration(1200)
+        .duration(750)
         .ease(d3.easeLinear)
         .attr("stroke-dashoffset", 0);
     }, []);
     const animateFadeIn = useCallback(() => {
         d3.select(ref.current)
         .transition()
-        .duration(1200)
+        .duration(750)
         .ease(d3.easeLinear)
         .attr("opacity", 1);
     }, []);
@@ -58,6 +58,7 @@ export const Line = ({
     .x((d) => xScale(d.date))
     .y((d) => yScale(d.value))
     .curve(d3.curveCatmullRom.alpha(0.1))
+    
  
   return (
     <path

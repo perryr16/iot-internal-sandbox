@@ -6,7 +6,7 @@ export const Legend = ({data, selectedItems, onChange}) => {
             {data.map((d) => (
                 <div style={{color: d.color, display: 'inline-block'}} key={d.name}>
                     <label style={{padding: '10px'}}>
-                        {d.name !== 'Portfolio' && ( 
+                        {d.name !== 'portfolio' && ( 
                             <input
                                 type='checkbox'
                                 style={{width: '20px', height: '20px'}}

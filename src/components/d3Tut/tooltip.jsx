@@ -168,7 +168,7 @@ export const Tooltip = ({
             <rect className="contentBackground" rx={4} ry={4} opacity={0.2} />
             <text className="contentTitle" transform="translate(4,14)" />
             <g className="content" transform="translate(4,32)">
-            {data.map(({ name, color }, i) => (
+            {data.map(({ name, color, value }, i) => (
                 <g key={name} transform={`translate(6,${22 * i})`}>
                 <circle r={6} fill={color} />
                 <text className="performanceItemName" transform="translate(10,4)">
@@ -179,6 +179,7 @@ export const Tooltip = ({
                     opacity={0.5}
                     fontSize={10}
                 />
+                {value} DOG!
                 <text className="performanceItemMarketValue" />
                 </g>
             ))}

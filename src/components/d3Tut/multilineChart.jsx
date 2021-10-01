@@ -4,12 +4,8 @@ import * as d3 from 'd3'
 import { Area, Axis, GridLine, Line, Overlay, Tooltip } from '../index'
 import useController from './multilineChart.controller.js'
 
-export const MultilineChart = ({ data = [], dimensions = {} }) => {
+export const MultilineChart = ({ data = [], dimensions = {}, selectedItems }) => {
   const overlayRef = useRef(null);
-  // const [containerRef, {svgWidth, svgHeight, width, height}] = useDimensions ({
-  //   maxHeight: 400,
-  //   margin
-  // })
   const { width, height, margin = {} } = dimensions;
   const svgWidth = width + margin.left + margin.right;
   const svgHeight = height + margin.top + margin.bottom;
@@ -27,6 +23,8 @@ export const MultilineChart = ({ data = [], dimensions = {} }) => {
 
   }
 
+  const colors = ['blue', 'red']
+
   const mousemove = (e, d) => {
     const text = d3.select('.tooltip-area__text');
     text.text(`${d.date}, ${d.value}`)
@@ -41,16 +39,24 @@ export const MultilineChart = ({ data = [], dimensions = {} }) => {
         <GridLine
           type="vertical"
           scale={xScale}
-          ticks={5}
+          ticks={20}
           size={height}
           transform={`translate(0, ${height})`}
         />
-        <GridLine type="horizontal"  scale={yScaleForAxis} ticks={2} size={width} />
+        {/* <GridLine type="horizontal"  scale={yScaleForAxis} ticks={10} size={width} /> */}
         <GridLine
           type="horizontal"
           className="baseGridLine"
           scale={yScale}
-          ticks={1}
+          ticks={20}
+          size={width}
+          disableAnimation
+        />
+        <GridLine
+          type="horizontal"
+          className="baseGridLine"
+          scale={yScale}
+          ticks={40}
           size={width}
           disableAnimation
         />
@@ -64,18 +70,32 @@ export const MultilineChart = ({ data = [], dimensions = {} }) => {
             animation="fadeIn"
           />
         ))}
-        <Area 
+        {selectedItems.map((item, i) => (
+          <Area 
+            data={data[i].items}
+            color={colors[i]}
+            xScale={xScale}
+            yScale={yScale}
+          />
+        ))}
+
+        {/* <Area 
           data={data[0].items}
-          color={data[0].color}
+          color={'blue'}
           xScale={xScale}
           yScale={yScale}
         />
+        <Area 
+          data={data[1].items}
+          color={'red'}
+          xScale={xScale}
+          yScale={yScale}
+        /> */}
         <Axis
           type="left"
-          scale={yScaleForAxis}
-          transform="translate(0, -10)"
-          ticks={5}
-          tickFormat={yTickFormat}
+          scale={yScale}
+          transform="translate(0, 0)"
+          ticks={12}
         />
         <Overlay ref={overlayRef} width={width} height={height}>
           <Axis
@@ -83,7 +103,7 @@ export const MultilineChart = ({ data = [], dimensions = {} }) => {
             className="axisX"
             scale={xScale}
             transform={`translate(10, ${height - height / 6})`}
-            ticks={5}
+            ticks={10}
           />
           <Tooltip
             className='tooltip'

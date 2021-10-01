@@ -5,20 +5,21 @@ import { Legend } from './legend'
 // import vcit from '../../fixtures/VCIT.json'
 import portfolio from '../../fixtures/portfolio.json'
 import { linedata2, addData } from '../../fixtures/d3ChartData';
+import { linedataNum, addDataNum } from '../../fixtures/d3ChartData2';
 
 
 
 export const MultilineContainer = () => {
-    const [data0, setData0] = useState(linedata2[0])
-    const [data1, setData1] = useState(linedata2[1])
+    const [data0, setData0] = useState(linedataNum[0])
+    const [data1, setData1] = useState(linedataNum[1])
     const [time, setTime] = useState()
 
     const timeNow = () => {
-        const dateRaw = (new Date()).toLocaleString('en-US', {hour12: true}).split(',')[1].split(':')[2].split(' ')[0]
+        const dateRaw = (new Date())
         setTime(dateRaw)
     }
 
-    const intervalMS = 10
+    const intervalMS = 200
     useEffect(() => {
         const interval = setInterval(() => {
             (timeNow())
@@ -28,22 +29,16 @@ export const MultilineContainer = () => {
 
 
     useEffect(() => {
-            setData0(addData(data0))
-            setData1(addData(data1))
+            setData0(addDataNum(data0,12))
+            setData1(addDataNum(data1,4))
     },[time])
-
-    // console.log('addData()', addData(linedata2[0]))
-
-    // // console.log('>>> data0',data0)
-    // const data0 = linedata2[0]
-    // const data1 = linedata2[1]
 
 
     const [screenDimensions, setScreenDimensions] = useState({
         width: window.innerWidth,
         height: window.innerHeight
     })
-    console.log('x,y', [screenDimensions.width, screenDimensions.height])
+    // console.log('x,y', [screenDimensions.width, screenDimensions.height])
 
     const handleResize = () => {
         setScreenDimensions({
@@ -56,22 +51,11 @@ export const MultilineContainer = () => {
         window.addEventListener('resize', handleResize, false)
     },[])
 
-
-    const portfolioData = {
-        name: "Portfolio",
-        color: "#ffffff",
-        items: portfolio.map((d) => ({ ...d, date: new Date(d.date) }))
-    };
-    // const schcData = {
-    //     name: "SCHC",
-    //     color: "#d53e4f",
-    //     items: schc.map((d) => ({ ...d, date: new Date(d.date) }))
-    // };
-    // const vcitData = {
-    //     name: "VCIT",
-    //     color: "#5e4fa2",
-    //     items: vcit.map((d) => ({ ...d, date: new Date(d.date) }))
-    // };
+    const data2set = {
+        name: 'const',
+        color: 'white',
+        items: data0.map((d) => ({ ...d, date: new Date(d.date) }))
+    }
     const data0set = {
         name: 'dog',
         color: "#5e4fa2",
@@ -90,12 +74,13 @@ export const MultilineContainer = () => {
       margin: { top: 30, right: 30, bottom: 30, left: 60 }
     };
 
-    const [selectedItems, setSelectedItems] = useState([]);
-    const legendData = [portfolioData, data0set, data1set];
+    const [selectedItems, setSelectedItems] = useState(['dog', 'cat']);
+    const legendData = [data0set, data1set];
     // const legendData = [portfolioData, schcData, vcitData];
     const chartData = [
-        portfolioData, 
         ...[data0set, data1set].filter((d) => selectedItems.includes(d.name))
+        // portfolioData, 
+        // ...[data0set, data1set].filter((d) => selectedItems.includes(d.name))
         // ...[linedata2[0], linedata2[1]].filter((d) => selectedItems.includes(d.name))
     ];
     const onChangeSelection = (name) => {
@@ -105,7 +90,7 @@ export const MultilineContainer = () => {
         : [...selectedItems, name];
         setSelectedItems(newSelectedItems);
     };
-    console.log('chartData', chartData)
+    // console.log('chartData', chartData)
     return (
         <div>   
             <Legend 
@@ -116,6 +101,7 @@ export const MultilineContainer = () => {
             <MultilineChart
                 data={chartData}
                 dimensions={dimensions}
+                selectedItems={selectedItems}
                 />
         </div>
     )

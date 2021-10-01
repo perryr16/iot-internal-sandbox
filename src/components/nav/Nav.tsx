@@ -1,8 +1,13 @@
 import React, {useEffect, useState}  from 'react';
+import ReactDom from 'react-dom'
 import './index.css'
-import {Link} from 'react-router-dom'
+// import {Link} from 'react-router-dom'
 import {useDispatch, useSelector} from 'react-redux';
 import { selectPage, setPage } from '../../features/page/page-slice';
+import Button from '@mui/material/Button'
+import Link from '@mui/material/Link'
+
+
 
 interface Props {
     pageName: any[]
@@ -24,17 +29,18 @@ export const Nav: React.FC<Props> = (props) => {
         <div className='side-nav'>
             {pageName.map((item) => {
                 return (
-                    <Link className='nav-link' to={`/${item}`} key={item} >
-                        {page.page == item 
-                        ? <div  className='link-container' onClick={() => handlePage(item)} style={{borderLeft: 'solid 1px rgb(255,255,255)', color: 'rgb(255,255,255)'}}>
-                                {item}
-                            </div>
-                        : < div  className='link-container' onClick={() => handlePage(item)} > 
-                            {item} 
-                            </div>
-                        }
+                        <Link className='nav-link' underline='none' href={`/${item}`}>
+                                {page.page == item 
+                                    ? <Button  variant='contained' className='link-container' onClick={() => handlePage(item)} style={{borderBottom: 'solid 10px rgb(255,255,255)', color: 'rgb(255,255,255)'}}>
+                                    {item}
+                                    </Button>
+                                    : < Button  variant='contained' className='link-container' onClick={() => handlePage(item)} > 
+                                    {item} 
+                                    </Button>
+                                }
 
-                    </Link>
+
+                        </Link>
                 )
             })}
         </div>
