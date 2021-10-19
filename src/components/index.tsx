@@ -21,9 +21,11 @@ import { LineNivoCanvas } from './nivo/LineNivoCanvas.jsx'
 import { MultilineChart } from './d3Tut/multilineChart.jsx'
 import { MultilineContainer } from './d3Tut/multilineContainer'
 import { Nav } from './nav/Nav'
+import { OfficeFloor } from './office/OfficeFloor'
 import { Overlay } from './d3Tut/overlay.jsx'
 import { PerformanceContainer } from './graph-card/performance/PerformacneContainer.jsx'
 import { PieChart } from './graph-card/pie/PieChart'
+import { Sensor } from './office/Sensor'
 import { Tooltip } from './d3Tut/tooltip.jsx'
 
 export{
@@ -49,9 +51,11 @@ export{
     MultilineChart,
     MultilineContainer,
     Nav,
+    OfficeFloor,    
     Overlay,
     PerformanceContainer,
     PieChart,
+    Sensor,
     Tooltip,
 
 }

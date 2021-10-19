@@ -10,11 +10,11 @@ import Link from '@mui/material/Link'
 
 
 interface Props {
-    pageName: any[]
+    pageNames: any[]
 }
 
 export const Nav: React.FC<Props> = (props) => {
-    const {pageName} = props;
+    const {pageNames} = props;
 
     const page = useSelector(selectPage)
     
@@ -27,15 +27,15 @@ export const Nav: React.FC<Props> = (props) => {
 
     return (
         <div className='side-nav'>
-            {pageName.map((item) => {
+            {pageNames.map((pageName) => {
                 return (
-                        <Link className='nav-link' underline='none' href={`/${item}`}>
-                                {page.page == item 
-                                    ? <Button  variant='contained' className='link-container' onClick={() => handlePage(item)} style={{borderBottom: 'solid 10px rgb(255,255,255)', color: 'rgb(255,255,255)'}}>
-                                    {item}
+                        <Link className='nav-link' underline='none' href={`/${pageName}`}>
+                                {page.page == pageName 
+                                    ? <Button  variant='contained' className='link-container' onClick={() => handlePage(pageName)} style={{borderBottom: 'solid 1px rgb(255,255,255)', color: 'rgb(255,255,255)', backgroundColor: 'rgb(0, 44, 102)'}}>
+                                    {pageName}
                                     </Button>
-                                    : < Button  variant='contained' className='link-container' onClick={() => handlePage(item)} > 
-                                    {item} 
+                                    : < Button  variant='contained' className='link-container' onClick={() => handlePage(pageName)} > 
+                                    {pageName} 
                                     </Button>
                                 }
 

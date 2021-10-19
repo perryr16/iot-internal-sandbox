@@ -12,6 +12,7 @@ import {
    GaugeHalf,
    MultilineContainer,
    LineNivo,
+   OfficeFloor,
    LineNivoCanvas,
    PerformanceContainer
 } from '../../index';
@@ -32,6 +33,13 @@ export const IotRouter: React.FC = () => {
                <LineGraph />
             </ GraphCard>
          </Route>
+         <Route exact path="/d3Line">
+            <GraphCard>
+               {/* <LineNivoCanvas data={lineNivoData} /> */}
+               <MultilineContainer/>
+
+            </GraphCard>
+         </Route>
          <Route exact path="/Pie">
             <GraphCard >
                <PieChart />
@@ -50,15 +58,9 @@ export const IotRouter: React.FC = () => {
                <LineNivoCanvas data={lineNivoData} />
             </GraphCard>
          </Route>
-         <Route exact path="/d3Line">
-            <GraphCard>
-               {/* <LineNivoCanvas data={lineNivoData} /> */}
-               <MultilineContainer/>
 
-            </GraphCard>
-         </Route>
          <Route path="/">
-            <h1>Home</h1>
+            <OfficeFloor />
          </Route>
       </Switch>
    );

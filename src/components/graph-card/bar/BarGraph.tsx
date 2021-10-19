@@ -1,5 +1,6 @@
 import React from 'react';
 import {Bar} from 'react-chartjs-2';
+import './index.css'
 
 
 interface Props {
@@ -22,8 +23,9 @@ const state = {
 
 export const BarGraph: React.FC<Props> = () => {
     return (
-        <div>
+        <div className='bar-graph'>
             <Bar 
+                
                 data={state}
                 options={{
                     title:{

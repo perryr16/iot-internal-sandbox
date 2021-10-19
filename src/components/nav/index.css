@@ -37,10 +37,10 @@
 .side-nav:first-child {
     padding-top:40px;
 }
-.link-container:hover {
-    border-left: solid 1px rgb(23, 182, 255);
+/* .link-container:hover { */
+    /* border-left: solid 1px rgb(23, 182, 255); */
     /* background-color:rgb(24, 24, 24);  */
-}
+/* } */
 .nav-link:hover {
     color: rgb(23, 182, 255);
 }

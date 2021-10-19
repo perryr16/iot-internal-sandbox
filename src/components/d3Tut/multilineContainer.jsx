@@ -32,15 +32,15 @@ export const MultilineContainer = () => {
 
 
     const [screenDimensions, setScreenDimensions] = useState({
-        width: window.innerWidth,
-        height: window.innerHeight
+        width: window.innerWidth-500,
+        height: window.innerHeight-500
     })
     // console.log('x,y', [screenDimensions.width, screenDimensions.height])
 
     const handleResize = () => {
         setScreenDimensions({
-            width: window.innerWidth,
-            height: window.innerHeight
+            width: window.innerWidth-500,
+            height: window.innerHeight-500
         })
     }
 
@@ -54,13 +54,13 @@ export const MultilineContainer = () => {
         items: data0.map((d) => ({ ...d, date: new Date(d.date) }))
     }
     const data0set = {
-        name: 'dog',
+        name: 'Co2',
         color: "#5e4fa2",
         // items: data0.map((d) => ({ ...d, date: new Date(d.date) }))
         items: data0.map((d) => ({ ...d, date: new Date(d.date) }))
     }
     const data1set = {
-        name: 'cat',
+        name: 'Temp',
         color: "rgb(255,0,0)",
         // items: data1.map((d) => ({ ...d, date: new Date(d.date) }))
         items: data1.map((d) => ({ ...d, date: new Date(d.date) }))
@@ -71,7 +71,7 @@ export const MultilineContainer = () => {
       margin: { top: 30, right: 30, bottom: 30, left: 60 }
     };
 
-    const [selectedItems, setSelectedItems] = useState(['dog', 'cat']);
+    const [selectedItems, setSelectedItems] = useState(['Co2', 'Temp']);
     const legendData = [data0set, data1set];
     // const legendData = [portfolioData, schcData, vcitData];
     const chartData = [

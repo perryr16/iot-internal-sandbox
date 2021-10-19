@@ -1,0 +1,68 @@
+.floor-plan{
+    width: 80vw;
+    position: absolute;
+    left: 0;
+    top: 200px;
+}
+.office-floor-content {
+    margin-left: 350px;
+    position: relative;
+    left: 0px;
+}
+.col {
+    width: 25vw;
+    height: 100vh;
+    display: inline-block;
+    /* position: absolute; */
+}
+.row {
+    height: 30vh;
+    /* display: inline-block; */
+    border: 1px solid red;
+}
+.grid {
+    margin-top: 100px;
+    z-index: 99;
+    position: relative;
+}
+
+.sensor {
+    width: 5vw;
+    cursor: pointer;
+    /* border: 1px solid rgba(0, 0, 0, 0); */
+    /* border-radius: 40px; */
+    /* box-shadow: 0px 0px 40px 1px rgb(33, 52, 117); */
+    /* background: rgba(33, 52, 117, 0.5) */
+    /* box-shadow: 120px 80px 40px 20px #0ff; */
+
+}
+.sensor:hover {
+    /* border: 1px solid rgba(23, 182, 255, 0.5); */
+    /* background: rgba(23, 182, 255, 0.5); */
+    border-radius: 5px;
+    
+}
+.sensor-container {
+    /* position: relative; */
+    display: inline-block;
+    position: relative;
+}
+
+.halo-ne,
+.halo-nw {
+    position: absolute;
+    width: 2.3vw;
+    height: 5vh;
+    box-shadow: 10px 0px 40px 10px rgb(0, 0, 0);
+    background: none;
+    /* background: rgba(224, 248, 10, 0.6); */
+    /* border-radius: 20px; */
+    z-index: -1;
+}
+.halo-ne {
+    top: 2.5vh;
+}
+.halo-nw {
+    top: 2.5vh;
+    left: 2.5vw;
+}
