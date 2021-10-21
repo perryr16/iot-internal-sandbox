@@ -15,30 +15,28 @@ interface Props {
 
 export const Nav: React.FC<Props> = (props) => {
     const {pageNames} = props;
+    const [page, setPage] = useState('');
 
     // const page = useSelector(selectPage)
     
-    const page = () => {
+
+    useEffect(() => {
         const urlArray = window.location.href.split('/')
-        let page  = ''
-        page = urlArray[3] == '' ? 'Home' : urlArray[3]
-        console.log(page)
-        return page
-    }
+        let pagex = urlArray[3] == '' ? 'Home' : urlArray[3]
+        setPage(pagex)
+        }, [window.location.href])
+
     const dispatch = useDispatch()
     const handlePage = (newPage:string) => {
         dispatch(setPage(newPage))
     }
-
-    console.log(page())
-    console.log(pageNames)
 
     return (
         <div className='side-nav'>
             {pageNames.map((pageName) => {
                 return (
                     <Link className='nav-link' underline='none' href={`/${pageName}`}>
-                        {page() == pageName
+                        {page == pageName
                             ? <Button  variant='contained' className='link-container nb' onClick={() => handlePage(pageName)} style={{borderBottom: 'solid 1px rgb(255,255,255)', color: 'rgb(255,255,255)', backgroundColor: 'rgb(0, 44, 102)'}}>
                             {pageName}
                             </Button>
