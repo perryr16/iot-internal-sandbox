@@ -2,45 +2,43 @@
     width: 80vw;
     position: absolute;
     left: 0;
-    top: 200px;
+    z-index: -1;
+    /* top: 200px; */
 }
 .office-floor-content {
     margin-left: 350px;
     position: relative;
     left: 0px;
+    width: 80vw;
+    height: 50vw;
 }
-.col {
-    width: 25vw;
-    height: 100vh;
-    display: inline-block;
-    /* position: absolute; */
-}
-.row {
-    height: 30vh;
-    /* display: inline-block; */
-    border: 1px solid red;
-}
+
 .grid {
     margin-top: 100px;
     z-index: 99;
-    position: relative;
 }
-
+.sensor-x{
+    /* position: relative; */
+    position: absolute;
+}
 .sensor {
     width: 5vw;
     cursor: pointer;
+    /* position: relative; */
     /* border: 1px solid rgba(0, 0, 0, 0); */
-    /* border-radius: 40px; */
-    /* box-shadow: 0px 0px 40px 1px rgb(33, 52, 117); */
+    /* /* background: rgba(33, 52, 117, 0.2); */
+    /* background: rgba(255, 255, 255, 0.774); */
+    border-radius: 10px;
+    /* box-shadow: 0px 0px 10px 10px rgba(33, 52, 117, 0.6); */
+    /* box-shadow: 0px 0px 20px 30px inset rgb(33, 52, 117); */
+    /* box-shadow: x-offset y-offset blur-radius spread-radius rgb(33, 52, 117); */
+    /* box-shadow: 0px 0px 40px 10px rgb(33, 52, 117); */
     /* background: rgba(33, 52, 117, 0.5) */
     /* box-shadow: 120px 80px 40px 20px #0ff; */
 
 }
-.sensor:hover {
-    /* border: 1px solid rgba(23, 182, 255, 0.5); */
-    /* background: rgba(23, 182, 255, 0.5); */
-    border-radius: 5px;
-    
+.sensor:hover { 
+    background: rgba(33, 52, 117, 0.6);
 }
 .sensor-container {
     /* position: relative; */
@@ -48,21 +46,13 @@
     position: relative;
 }
 
-.halo-ne,
-.halo-nw {
+.info-modal {
     position: absolute;
-    width: 2.3vw;
-    height: 5vh;
-    box-shadow: 10px 0px 40px 10px rgb(0, 0, 0);
-    background: none;
-    /* background: rgba(224, 248, 10, 0.6); */
-    /* border-radius: 20px; */
-    z-index: -1;
+    background: rgba(33, 52, 117, 0.6);;
+    bottom: -30px;
+    width: 300%;
+    white-space: pre-line;
 }
-.halo-ne {
-    top: 2.5vh;
-}
-.halo-nw {
-    top: 2.5vh;
-    left: 2.5vw;
+.div-modal {
+    position:relative;
 }

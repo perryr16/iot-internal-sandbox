@@ -1,0 +1,9 @@
+
+.col {
+    width: 9%;
+    height: 100%;
+    display: inline-block;
+}
+.row {
+    height: 16%;
+}

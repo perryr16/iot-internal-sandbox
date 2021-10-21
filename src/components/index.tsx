@@ -4,6 +4,7 @@ import { Axis } from './d3Tut/axis.jsx'
 import { BarGraph } from './graph-card/bar/BarGraph'
 import { BasicComponent } from './basic_component/BasicComponent'
 import { Body } from './body/Body'
+import { Columnx } from './grid/Columnx'
 import { Gauge } from './graph-card/performance/Gauge'
 import { Gauge34 } from './graph-card/performance/Gauge34'
 import { GaugeCustom } from './graph-card/performance/GaugeCustom'
@@ -34,6 +35,7 @@ export{
     BarGraph,
     BasicComponent,
     Body,
+    Columnx,
     Gauge,
     Gauge34,
     GaugeCustom,
