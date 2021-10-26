@@ -1,5 +1,5 @@
 .floor-plan{
-    width: 80vw;
+    width: 70vw;
     position: absolute;
     left: 0;
     z-index: -1;
@@ -9,13 +9,13 @@
     margin-left: 350px;
     position: relative;
     left: 0px;
-    width: 80vw;
-    height: 50vw;
+    width: 70vw;
+    height: 43vw;
 }
 
 .grid {
     margin-top: 100px;
-    z-index: 99;
+    z-index: 5;
 }
 .sensor-x{
     /* position: relative; */
@@ -39,6 +39,11 @@
 }
 .sensor:hover { 
     background: rgba(33, 52, 117, 0.6);
+    /* background: rgba(255,255,255, 0.6); */
+    /* border: 2px solid rgb(23, 182, 255);
+    border-radius: 5px; */
+
+    transform: scale(1.2);
 }
 .sensor-container {
     /* position: relative; */
@@ -48,11 +53,19 @@
 
 .info-modal {
     position: absolute;
-    background: rgba(33, 52, 117, 0.6);;
-    bottom: -30px;
+    background: rgba(255, 255, 255, 0.8);
+    bottom: -10px;
+    /* bottom: auto; */
+    left: -150px;
     width: 300%;
     white-space: pre-line;
+    border: 2px solid rgb(23, 182, 255);
+    border-radius: 5px;
+    color: black;
+    font-weight: bold;
+    z-index: 8;
 }
 .div-modal {
     position:relative;
+    margin: auto;
 }

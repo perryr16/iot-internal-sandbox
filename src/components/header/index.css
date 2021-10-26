@@ -16,14 +16,14 @@
 .header {
     top:0;
     height: 100px; 
-    position: absolute;
+    position: fixed;
     color: black;
     background-color: white;
     width: 110vw;
     border-bottom: 3px solid rgb(23, 182, 255);
     /* box-shadow: 0px 0px 10px 8px #02aff3; */
     /* outline: 1px solid rgb(111, 209, 255); */
-    z-index: 5;
+    z-index: 7;
 }
 
 .test {
